@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<section class="blogs" id="blogs">
+
+        <div class="swiper blogs-slider">
+            {%  if blog %}
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="{{blog.images.url}}" alt="">
+                    </div>
+                    <div class="content">
+                        <h2>{{blog.name}}</h2>
+                        <h4>{{blog.title}}</h4>
+
+                        <h2>{{blog.created_at}}</h2>
+
+                    </div>
+                </div>
+
+
+            </div>
+            {% endif %}
+
+        </div>
+
+    </section>
+
+
+{% endblock %}

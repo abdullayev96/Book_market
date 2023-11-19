@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<section class="blogs" id="o">
+
+        <h1 class="heading"> <span>bizning bloglar</span> </h1>
+
+        <div class="swiper blogs-slider">
+            {%  for b in blogs %}
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="{{b.images.url}}" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>{{b.name}}</h3>
+                        <a href="{% url 'blog_detail' b.id %}" class="btn">ko'proq o'qish</a>
+                    </div>
+                </div>
+
+
+            </div>
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+
+{% endblock %}
